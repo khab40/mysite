@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Alexey Khabalov across applied AI, market-data platforms, cloud modernization, and engineering delivery.">
+    <title>Projects - Alexey Khabalov</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">Alexey Khabalov</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#writing" class="nav-link">Writing</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero" style="min-height: 50vh; padding: 4rem 2rem;">
+        <div class="container" style="text-align: center;">
+            <h1>Projects</h1>
+            <p style="font-size: 1.1rem; color: #666; margin-top: 1rem;">
+                Applied AI, market-data platforms, enterprise modernization, and delivery work from recent CVs and public repositories.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="projects-grid">
+                <article class="project-card" id="financial-data-platform">
+                    <div class="project-signal signal-finance">
+                        <span>dxFeed</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI-Enabled Financial Data Platform Work</h3>
+                        <p>Directed the first production-grade cloud-native Market Data Platform and AWS Data Lakehouse work, including secure SQL/API access, Data Shop services, feature-store work, billing, telemetry, entitlements, and AI-enabled financial-data PoCs.</p>
+                        <div class="project-tags">
+                            <span class="tag">AWS</span>
+                            <span class="tag">Lakehouse</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">GraphRAG</span>
+                        </div>
+                        <div class="project-meta">
+                            <p><strong>Timeline:</strong> 2022 - 2025</p>
+                            <p><strong>Role:</strong> Senior Engineering Manager, director-level scope</p>
+                        </div>
+                        <a href="https://dxfeed.com/solutions/dxfeed-historical-data-lake/" target="_blank" rel="noreferrer" class="project-link">View dxFeed Data Lake</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-signal signal-agent">
+                        <span>Public GitHub project</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Agent Pub Booking System</h3>
+                        <p>Designed and implemented a multi-step agent workflow for researching and booking a pub in Edinburgh with tool calls, structured validation, policy checks, dialogue handoff, and optional speech input/output.</p>
+                        <div class="project-tags">
+                            <span class="tag">LLM agents</span>
+                            <span class="tag">Rasa</span>
+                            <span class="tag">File IPC</span>
+                            <span class="tag">STT/TTS</span>
+                        </div>
+                        <div class="project-meta">
+                            <p><strong>Focus:</strong> Agent loops, deterministic policy enforcement, dataflow checks</p>
+                            <p><strong>Role:</strong> System design and implementation</p>
+                        </div>
+                        <a href="https://github.com/khab40/homework-pub-booking/" target="_blank" rel="noreferrer" class="project-link">View GitHub project</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-signal signal-model">
+                        <span>Public GitHub project</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>LLM Architecture Lab - LoRA, RoPE, MoE</h3>
+                        <p>Implemented and documented modern LLM exercises: LoRA from scratch for GPT-2, adapter save/load paths, PEFT comparison, RoPE attention, and sparse Mixture-of-Experts feed-forward layers.</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Hugging Face</span>
+                            <span class="tag">PEFT</span>
+                            <span class="tag">GPU</span>
+                        </div>
+                        <div class="project-meta">
+                            <p><strong>Focus:</strong> Model adaptation and transformer internals</p>
+                            <p><strong>Role:</strong> Hands-on lab implementation</p>
+                        </div>
+                        <a href="https://github.com/khab40/lm-arch-ht4" target="_blank" rel="noreferrer" class="project-link">View GitHub project</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-signal signal-data">
+                        <span>Public GitHub project</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Market Data Lake / Data Shop Demo</h3>
+                        <p>Built a production-style market-data platform demo for catalog-driven discovery, commerce flows, entitlement-like access, API-key access, operational monitoring, and layered backend services.</p>
+                        <div class="project-tags">
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">REST APIs</span>
+                            <span class="tag">Data products</span>
+                            <span class="tag">Next.js</span>
+                        </div>
+                        <div class="project-meta">
+                            <p><strong>Focus:</strong> Backend/data foundations for AI-enabled financial products</p>
+                            <p><strong>Role:</strong> Architecture and implementation</p>
+                        </div>
+                        <a href="https://github.com/khab40/spring-boot-java-refresh" target="_blank" rel="noreferrer" class="project-link">View GitHub project</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-signal signal-cloud">
+                        <span>DataArt</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>EdTech Data Platform Modernization</h3>
+                        <p>Directed modernization across legacy and greenfield data platforms for a U.S./global EdTech client while managing data engineering, QA, ML-engineering, and Data Ops workstreams.</p>
+                        <div class="project-tags">
+                            <span class="tag">Azure Data Factory</span>
+                            <span class="tag">Snowflake</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">GCP</span>
+                        </div>
+                        <div class="project-meta">
+                            <p><strong>Timeline:</strong> 2020 - 2022</p>
+                            <p><strong>Role:</strong> Senior Technical Delivery Manager</p>
+                        </div>
+                        <a href="docs/Alexey-Khabalov-Director-Senior-Engineering-Manager-AI-Data-Platforms-2026-05-22.PDF" class="project-link">View CV detail</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-signal signal-delivery">
+                        <span>DataArt</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Wall Street Platform Cloud Transformation</h3>
+                        <p>Led a nine-month transformation for a financial analytics client, moving services from on-prem Red Hat/JBoss toward OpenShift and Kubernetes with a distributed 20-person team.</p>
+                        <div class="project-tags">
+                            <span class="tag">OpenShift</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">Cloud migration</span>
+                        </div>
+                        <div class="project-meta">
+                            <p><strong>Timeline:</strong> 2019 - 2020</p>
+                            <p><strong>Role:</strong> Projects Delivery Manager</p>
+                        </div>
+                        <a href="docs/Alexey-Khabalov-Director-Senior-Engineering-Manager-AI-Data-Platforms-2026-05-22.PDF" class="project-link">View CV detail</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-signal signal-kone">
+                        <span>KONE</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>kone.com Global Web Modernization</h3>
+                        <p>Led global web work around a more reliable Azure topology, responsive delivery, local-site patterns, and enterprise CMS and localization platform upgrades.</p>
+                        <div class="project-tags">
+                            <span class="tag">Azure</span>
+                            <span class="tag">Responsive web</span>
+                            <span class="tag">SDL Tridion</span>
+                            <span class="tag">Localization</span>
+                        </div>
+                        <div class="project-meta">
+                            <p><strong>Context:</strong> Global website and enterprise vendor delivery</p>
+                            <p><strong>Role:</strong> Web Applications Manager / Expert</p>
+                        </div>
+                        <a href="https://www.kone.com/" target="_blank" rel="noreferrer" class="project-link">Visit kone.com</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="writing" id="writing">
+        <div class="container">
+            <h2 class="section-title">Writing and Publications</h2>
+            <div class="writing-grid">
+                <article class="writing-card">
+                    <p class="writing-meta">Springer | CEEMAS 2001</p>
+                    <h3>Software Development Kit for Multi-agent Systems Design and Implementation</h3>
+                    <p>Co-authored a Lecture Notes in Computer Science paper on technology and tooling for knowledge-based multi-agent system design and implementation.</p>
+                    <a href="https://link.springer.com/chapter/10.1007/3-540-45941-3_13" target="_blank" rel="noreferrer" class="project-link">View Springer chapter</a>
+                </article>
+
+                <article class="writing-card">
+                    <p class="writing-meta">LinkedIn | Nebius Academy study notes</p>
+                    <h3>Sovereign Agent Lab and Guardrailed Agent Workflows</h3>
+                    <p>Recent study notes compare LangChain/LangGraph automation with Rasa Pro confirmation flows while documenting hands-on Nebius Academy homework.</p>
+                    <a href="https://www.linkedin.com/in/khabalov/recent-activity/all/" target="_blank" rel="noreferrer" class="project-link">Read LinkedIn posts</a>
+                </article>
+
+                <article class="writing-card">
+                    <p class="writing-meta">LinkedIn | Nebius webinar takeaways</p>
+                    <h3>Production LLM Logs, Adaptation, and Performance</h3>
+                    <p>Recent notes from a Nebius session cover private deployments, p99 latency, production logs, post-training, and smaller domain-adapted models.</p>
+                    <a href="https://www.linkedin.com/in/khabalov/recent-activity/all/" target="_blank" rel="noreferrer" class="project-link">Read LinkedIn posts</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#writing">Writing</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/khabalov/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+                        <li><a href="https://github.com/khab40" target="_blank" rel="noreferrer">GitHub</a></li>
+                        <li><a href="mailto:alexey.khabalov@gmail.com">Email</a></li>
+                        <li><a href="docs/Alexey-Khabalov-Director-Senior-Engineering-Manager-AI-Data-Platforms-2026-05-22.PDF">Download CV</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="docs/Alexey-Khabalov-Director-Senior-Engineering-Manager-AI-Data-Platforms-2026-05-22.PDF">CV (Director)</a></li>
+                        <li><a href="docs/Alexey-Khabalov-PLATA-Head-of-AI-Engineering-2026-05-22.PDF">CV (AI Eng)</a></li>
+                        <li><a href="#writing">Publications</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026. All rights reserved.</p>
+                <p class="tech-stack">Built with HTML5 | CSS3 | JavaScript | Hosted on AWS S3 + CloudFront</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
