@@ -38,21 +38,21 @@ This static portfolio is designed for simple hosting on GitHub Pages or AWS S3 p
 
 ```mermaid
 flowchart TD
-    Visitor[Visitor browser] --> DNS[khabalov.dev DNS]
-    DNS --> Hosting{Hosting path}
-    Hosting -->|GitHub Pages| Pages[GitHub Pages static hosting]
-    Hosting -->|AWS| CF[CloudFront distribution]
-    CF --> S3[S3 static website bucket]
-    Pages --> HTML[index.html / about.html / 404.html]
+    Visitor["Visitor browser"] --> DNS["khabalov.dev DNS"]
+    DNS --> Hosting{"Hosting path"}
+    Hosting -->|"GitHub Pages"| Pages["GitHub Pages static hosting"]
+    Hosting -->|"AWS"| CF["CloudFront distribution"]
+    CF --> S3["S3 static website bucket"]
+    Pages --> HTML["index.html / about.html / 404.html"]
     S3 --> HTML
-    HTML --> CSS[CSS theme and layout]
-    HTML --> JS[main.js]
-    JS --> Theme{Theme source}
-    Theme -->|System setting| SystemTheme[Light or dark]
-    Theme -->|No system API| LocalTime[Local hour fallback]
-    JS --> Nav[Mobile nav and smooth scroll]
-    JS --> Tracking[Optional analytics hooks]
-    HTML --> Docs[CV PDFs and docs]
+    HTML --> CSS["CSS theme and layout"]
+    HTML --> JS["main.js"]
+    JS --> Theme{"Theme source"}
+    Theme -->|"System setting"| SystemTheme["Light or dark"]
+    Theme -->|"No system API"| LocalTime["Local hour fallback"]
+    JS --> Nav["Mobile nav and smooth scroll"]
+    JS --> Tracking["Optional analytics hooks"]
+    HTML --> Docs["CV PDFs and docs"]
 ```
 
 ## Error Handling
