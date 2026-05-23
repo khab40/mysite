@@ -705,11 +705,6 @@ section {
     margin: var(--spacing-xs) 0;
 }
 
-.tech-stack {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.85rem;
-}
-
 /* Error Page */
 .error-page {
     align-items: center;
