@@ -124,6 +124,14 @@
     .section-title {
         font-size: 1.8rem;
     }
+
+    .error-code {
+        font-size: 5rem;
+    }
+
+    .error-content h1 {
+        font-size: 2.25rem;
+    }
 }
 
 /* Mobile (480px and down) */
@@ -262,6 +270,18 @@
     .section-title {
         font-size: 1.4rem;
         margin-bottom: var(--spacing-lg);
+    }
+
+    .error-page {
+        min-height: auto;
+    }
+
+    .error-code {
+        font-size: 4rem;
+    }
+
+    .error-content h1 {
+        font-size: 1.8rem;
     }
 }
 

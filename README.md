@@ -8,6 +8,8 @@ A modern, professional portfolio website built with HTML5, CSS3, and JavaScript.
 mysite/
 ├── index.html                 # Main landing page
 ├── about.html                # Full projects page
+├── 404.html                  # Static not-found page
+├── robots.txt                # Search crawler rules
 ├── css/
 │   ├── styles.css            # Main styles
 │   └── responsive.css        # Mobile responsive styles
@@ -109,7 +111,7 @@ aws s3 mb s3://khabalov.dev --region us-east-1
 1. Go to S3 bucket → Properties
 2. Enable "Static website hosting"
 3. Set Index document: `index.html`
-4. Set Error document: `index.html`
+4. Set Error document: `404.html`
 
 #### Step 3: Upload Files
 ```bash
@@ -141,8 +143,8 @@ aws s3 sync . s3://khabalov.dev --exclude ".git*" --exclude "*.md"
    - TTL: 86400 seconds (1 day)
    - Compress objects: Yes
 6. Custom error response:
-   - 404 → /index.html
-   - 403 → /index.html
+   - 404 → /404.html
+   - 403 → /404.html
 7. Create distribution
 
 #### Step 6: Set Up Custom Domain (Route53)

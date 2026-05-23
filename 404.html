@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found - Alexey Khabalov portfolio.">
+    <meta name="author" content="Alexey Khabalov">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#f8f9fa" id="themeColorMeta">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:title" content="Page Not Found - Alexey Khabalov">
+    <meta property="og:description" content="The requested page was not found on khabalov.dev.">
+    <meta property="og:url" content="https://khabalov.dev/404.html">
+    <meta property="og:type" content="website">
+
+    <title>Page Not Found - Alexey Khabalov</title>
+    <link rel="canonical" href="https://khabalov.dev/404.html">
+    <script>
+        (function () {
+            var theme = 'light';
+            if (window.matchMedia) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            } else {
+                var hour = new Date().getHours();
+                theme = hour >= 19 || hour < 7 ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = theme;
+            document.documentElement.style.colorScheme = theme;
+            document.getElementById('themeColorMeta').setAttribute('content', theme === 'dark' ? '#0d0d0d' : '#f8f9fa');
+        }());
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">Alexey Khabalov</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="about.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="about.html#writing" class="nav-link">Writing</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="error-page">
+        <section class="error-content">
+            <p class="error-code">404</p>
+            <h1>Page not found</h1>
+            <p>
+                The page you are looking for is not available. The portfolio, projects, writing, and CV links are still one click away.
+            </p>
+            <div class="hero-buttons">
+                <a href="index.html" class="btn btn-primary">Go Home</a>
+                <a href="about.html#projects" class="btn btn-secondary">View Projects</a>
+                <a href="index.html#contact" class="btn btn-secondary">Contact</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
