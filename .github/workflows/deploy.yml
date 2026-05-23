@@ -1,24 +1,30 @@
 name: Deploy to AWS
 
 on:
-  push:
-    branches:
-      - main
-      - master
   workflow_dispatch:
+    inputs:
+      confirm_aws_deploy:
+        description: "Type true only after AWS secrets and S3/CloudFront are configured."
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 jobs:
   deploy:
+    if: ${{ github.event.inputs.confirm_aws_deploy == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
