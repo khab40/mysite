@@ -8,6 +8,41 @@ const navLinks = document.getElementById('navLinks');
 const navbar = document.getElementById('navbar');
 const navLinkElements = document.querySelectorAll('.nav-link');
 
+// ==================== Theme: system setting, then local time fallback ====================
+function resolveTheme() {
+    if (window.matchMedia) {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    const hour = new Date().getHours();
+    return hour >= 19 || hour < 7 ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+    const normalizedTheme = theme === 'dark' ? 'dark' : 'light';
+    const themeColorMeta = document.getElementById('themeColorMeta');
+
+    document.documentElement.dataset.theme = normalizedTheme;
+    document.documentElement.style.colorScheme = normalizedTheme;
+
+    if (themeColorMeta) {
+        themeColorMeta.setAttribute('content', normalizedTheme === 'dark' ? '#0d0d0d' : '#f8f9fa');
+    }
+}
+
+applyTheme(resolveTheme());
+
+if (window.matchMedia) {
+    const darkSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSchemeChange = event => applyTheme(event.matches ? 'dark' : 'light');
+
+    if (darkSchemeQuery.addEventListener) {
+        darkSchemeQuery.addEventListener('change', handleSchemeChange);
+    } else if (darkSchemeQuery.addListener) {
+        darkSchemeQuery.addListener(handleSchemeChange);
+    }
+}
+
 // ==================== Mobile Menu ====================
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {

@@ -4,7 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Projects by Alexey Khabalov across applied AI, market-data platforms, cloud modernization, and engineering delivery.">
+    <meta name="theme-color" content="#f8f9fa" id="themeColorMeta">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:title" content="Projects - Alexey Khabalov">
+    <meta property="og:description" content="Applied AI, market-data platforms, cloud modernization, and engineering delivery projects by Alexey Khabalov.">
+    <meta property="og:url" content="https://khabalov.dev/about.html">
+    <meta property="og:type" content="website">
     <title>Projects - Alexey Khabalov</title>
+    <link rel="canonical" href="https://khabalov.dev/about.html">
+    <script>
+        (function () {
+            var theme = 'light';
+            if (window.matchMedia) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            } else {
+                var hour = new Date().getHours();
+                theme = hour >= 19 || hour < 7 ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = theme;
+            document.documentElement.style.colorScheme = theme;
+            document.getElementById('themeColorMeta').setAttribute('content', theme === 'dark' ? '#0d0d0d' : '#f8f9fa');
+        }());
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

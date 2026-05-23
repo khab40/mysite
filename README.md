@@ -1,4 +1,4 @@
-# Your Portfolio Website
+# Alexey Khabalov Portfolio Website
 
 A modern, professional portfolio website built with HTML5, CSS3, and JavaScript. Optimized for AWS S3 + CloudFront deployment with zero infrastructure costs.
 
@@ -13,6 +13,7 @@ mysite/
 │   └── responsive.css        # Mobile responsive styles
 ├── js/
 │   └── main.js               # Main JavaScript functionality
+├── CNAME                     # Custom domain for GitHub Pages
 ├── images/                   # Your images (portfolio photos, project screenshots)
 ├── docs/                     # Documents (CV, certificates, etc.)
 │   └── CV.pdf               # Your CV (add your file here)
@@ -31,14 +32,14 @@ mysite/
 - **Modern UI**: Clean, professional design with smooth animations
 - **SEO Optimized**: Proper meta tags and structured data
 - **Contact Form**: Ready to integrate with AWS Lambda/API Gateway
-- **Dark Mode Support**: Automatic dark mode detection
+- **System/Time Theme**: Uses the visitor's system light/dark setting, with local-time fallback
 - **Print Friendly**: Professional print styles included
 
 ## 🚀 Getting Started Locally
 
 1. **Clone or download the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone git@github.com:khab40/mysite.git
    cd mysite
    ```
 
@@ -101,7 +102,7 @@ Create individual HTML pages for each project:
 #### Step 1: Create S3 Bucket
 ```bash
 # Using AWS CLI
-aws s3 mb s3://your-portfolio-domain.com --region us-east-1
+aws s3 mb s3://khabalov.dev --region us-east-1
 ```
 
 #### Step 2: Enable Static Website Hosting
@@ -112,7 +113,7 @@ aws s3 mb s3://your-portfolio-domain.com --region us-east-1
 
 #### Step 3: Upload Files
 ```bash
-aws s3 sync . s3://your-portfolio-domain.com --exclude ".git*" --exclude "*.md"
+aws s3 sync . s3://khabalov.dev --exclude ".git*" --exclude "*.md"
 ```
 
 #### Step 4: Set Bucket Policy
@@ -125,7 +126,7 @@ aws s3 sync . s3://your-portfolio-domain.com --exclude ".git*" --exclude "*.md"
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::your-portfolio-domain.com/*"
+            "Resource": "arn:aws:s3:::khabalov.dev/*"
         }
     ]
 }
@@ -158,7 +159,7 @@ aws route53 change-resource-record-sets --hosted-zone-id ZONE_ID \
         {
             "Action": "CREATE",
             "ResourceRecordSet": {
-                "Name": "yoursite.com",
+                "Name": "khabalov.dev",
                 "Type": "A",
                 "AliasTarget": {
                     "HostedZoneId": "Z2FDTNDATAQYW2",
@@ -173,7 +174,7 @@ aws route53 change-resource-record-sets --hosted-zone-id ZONE_ID \
 
 #### Step 7: SSL/TLS Certificate
 1. Go to ACM (AWS Certificate Manager)
-2. Request certificate for `yoursite.com` and `www.yoursite.com`
+2. Request certificate for `khabalov.dev` and `www.khabalov.dev`
 3. Validate DNS
 4. Attach to CloudFront distribution
 
@@ -250,7 +251,7 @@ jobs:
           aws-region: us-east-1
       - name: Sync to S3
         run: |
-          aws s3 sync . s3://your-portfolio-domain.com \
+          aws s3 sync . s3://khabalov.dev \
             --exclude ".git*" --exclude "*.md"
       - name: Invalidate CloudFront
         run: |
@@ -297,8 +298,8 @@ def lambda_handler(event, context):
     body = json.loads(event['body'])
     
     response = ses_client.send_email(
-        Source='noreply@yoursite.com',
-        Destination={'ToAddresses': ['your-email@example.com']},
+        Source='noreply@khabalov.dev',
+        Destination={'ToAddresses': ['alexey.khabalov@gmail.com']},
         Message={
             'Subject': {'Data': f"New Message from {body['name']}"},
             'Body': {'Text': {'Data': body['message']}}

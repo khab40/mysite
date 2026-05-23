@@ -6,8 +6,29 @@
     <meta name="description" content="Alexey Khabalov - Director of AI &amp; Data Platforms, specializing in AI engineering, machine learning, and data systems architecture.">
     <meta name="keywords" content="AI Engineering, Data Platforms, Machine Learning, Engineering Leadership, Director">
     <meta name="author" content="Alexey Khabalov">
+    <meta name="theme-color" content="#f8f9fa" id="themeColorMeta">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:title" content="Alexey Khabalov - AI &amp; Data Platforms Director">
+    <meta property="og:description" content="AI engineering and data platform leadership portfolio for Alexey Khabalov.">
+    <meta property="og:url" content="https://khabalov.dev/">
+    <meta property="og:type" content="website">
     
     <title>Alexey Khabalov - AI &amp; Data Platforms Director</title>
+    <link rel="canonical" href="https://khabalov.dev/">
+    <script>
+        (function () {
+            var theme = 'light';
+            if (window.matchMedia) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            } else {
+                var hour = new Date().getHours();
+                theme = hour >= 19 || hour < 7 ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = theme;
+            document.documentElement.style.colorScheme = theme;
+            document.getElementById('themeColorMeta').setAttribute('content', theme === 'dark' ? '#0d0d0d' : '#f8f9fa');
+        }());
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

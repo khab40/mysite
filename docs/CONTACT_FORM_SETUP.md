@@ -59,8 +59,8 @@ This is a template for the serverless contact form backend. Deploy this as an AW
            
            # Send email
            response = ses.send_email(
-               Source='noreply@yoursite.com',
-               Destination={'ToAddresses': ['your-email@example.com']},
+               Source='noreply@khabalov.dev',
+               Destination={'ToAddresses': ['alexey.khabalov@gmail.com']},
                Message={
                    'Subject': {
                        'Data': f'New Portfolio Message from {name}',
@@ -89,7 +89,7 @@ This is a template for the serverless contact form backend. Deploy this as an AW
            
            # Also send confirmation to user
            ses.send_email(
-               Source='noreply@yoursite.com',
+               Source='noreply@khabalov.dev',
                Destination={'ToAddresses': [email]},
                Message={
                    'Subject': {'Data': 'Message Received', 'Charset': 'UTF-8'},

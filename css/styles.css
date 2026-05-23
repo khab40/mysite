@@ -4,12 +4,18 @@
 
 /* CSS Variables */
 :root {
+    color-scheme: light;
     --primary-color: #0f766e;
     --secondary-color: #b45309;
     --text-dark: #1a1a1a;
     --text-light: #666666;
     --bg-light: #f8f9fa;
     --bg-white: #ffffff;
+    --bg-hero: linear-gradient(135deg, #f8f9fa 0%, #f0f2f5 100%);
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --profile-focus-bg: #1a1a1a;
+    --surface-raised: #ffffff;
+    --footer-bg: #1a1a1a;
     --border-color: #e0e0e0;
     --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -29,6 +35,23 @@
     --transition-fast: 0.2s ease-out;
     --transition-normal: 0.3s ease-out;
     --transition-slow: 0.5s ease-out;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --text-dark: #f0f0f0;
+    --text-light: #b0b0b0;
+    --bg-light: #1a1a1a;
+    --bg-white: #0d0d0d;
+    --bg-hero: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    --navbar-bg: rgba(13, 13, 13, 0.95);
+    --profile-focus-bg: #151515;
+    --surface-raised: #1a1a1a;
+    --footer-bg: #050505;
+    --border-color: #333333;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.35);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.45);
+    --shadow-large: 0 8px 32px rgba(0, 0, 0, 0.55);
 }
 
 /* Reset & Base Styles */
@@ -135,7 +158,7 @@ a:hover {
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--navbar-bg);
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -211,7 +234,7 @@ a:hover {
     min-height: calc(100vh - 160px);
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #f8f9fa 0%, #f0f2f5 100%);
+    background: var(--bg-hero);
 }
 
 .hero-content {
@@ -267,7 +290,7 @@ a:hover {
 }
 
 .profile-focus {
-    background: var(--text-dark);
+    background: var(--profile-focus-bg);
     border-radius: var(--radius-md);
     color: white;
     display: flex;
@@ -380,7 +403,7 @@ section {
 }
 
 .project-card {
-    background: var(--bg-white);
+    background: var(--surface-raised);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-light);
@@ -623,7 +646,7 @@ section {
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
-    background: var(--bg-white);
+    background: var(--surface-raised);
     border-radius: var(--radius-md);
     transition: all var(--transition-normal);
 }
@@ -656,7 +679,7 @@ section {
 }
 
 .contact-panel {
-    background: var(--bg-white);
+    background: var(--surface-raised);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: var(--spacing-xl);
@@ -692,12 +715,14 @@ section {
 
 .form-group input,
 .form-group textarea {
+    background: var(--surface-raised);
     padding: var(--spacing-sm);
     border: 2px solid var(--border-color);
     border-radius: var(--radius-md);
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     transition: all var(--transition-fast);
+    color: var(--text-dark);
 }
 
 .form-group input:focus,
@@ -709,7 +734,7 @@ section {
 
 /* Footer */
 .footer {
-    background: var(--text-dark);
+    background: var(--footer-bg);
     color: white;
     padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-lg);
 }
